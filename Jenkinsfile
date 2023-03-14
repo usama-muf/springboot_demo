@@ -5,16 +5,16 @@ node {
 
   stage("Compilation") {
     // bat "./mvnw clean install -DskipTests"
-    bat "./mvnw clean package -DskipTests"
+    bat "mvnclean package"
     echo "done"
   }
 
-  stage("Tests and Deployment") {
-    stage("Runing unit tests") {
-      bat "./mvnw test -Punit"
-    }
-    stage("Deployment") {
-      bat 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
-    }
-  }
+  // stage("Tests and Deployment") {
+  //   stage("Runing unit tests") {
+  //     bat "./mvnw test -Punit"
+  //   }
+  //   stage("Deployment") {
+  //     bat 'nohup ./mvnw spring-boot:run -Dserver.port=8001 &'
+  //   }
+  // }
 }
