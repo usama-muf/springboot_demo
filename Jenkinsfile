@@ -5,7 +5,7 @@ node {
 
   stage("Compilation") {
     // bat "./mvnw clean install -DskipTests"
-    bat "mvn clean install"
+    bat "./mvnw clean package -DskipTests"
   }
 
   stage("Tests and Deployment") {
